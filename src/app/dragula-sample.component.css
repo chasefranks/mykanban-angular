@@ -1,0 +1,30 @@
+
+.wrapper {
+  /*border: solid 1px;*/
+  color: green;
+  padding: 10px;
+  height: 300px;
+}
+
+.drag-bag {
+  width: 20%;
+  background-color: grey;
+  border: solid grey 1px;
+  padding: 10px;
+  float: left;
+  margin-left: 10px;
+  border-radius: 8px;
+}
+
+.drag-bag div {
+  border: solid grey 1px;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: black;
+  opacity: 0.75;
+}
+
+.drag-bag a {
+  color: magenta;
+}

@@ -2,15 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { DragulaSampleComponent } from './dragula-sample.component';
+
+import { DragulaModule } from 'ng2-dragula'
+import { DragulaService } from 'ng2-dragula'
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DragulaSampleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    DragulaModule
   ],
-  providers: [],
+  providers: [
+    DragulaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
