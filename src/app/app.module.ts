@@ -6,14 +6,16 @@ import { DragulaSampleComponent } from './dragula-sample.component';
 
 import { DragulaModule } from 'ng2-dragula'
 import { DragulaService } from 'ng2-dragula';
-import { TodoComponent } from './todo/todo.component'
+import { TodoComponent } from './todo/todo.component';
+import { KanbanComponent } from './kanban/kanban.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DragulaSampleComponent,
-    TodoComponent
+    TodoComponent,
+    KanbanComponent
   ],
   imports: [
     BrowserModule,
