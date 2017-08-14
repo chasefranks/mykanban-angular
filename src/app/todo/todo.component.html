@@ -1,0 +1,15 @@
+<div class="todo-col" id="todo" [dragula]='"todo-bag"'>
+  <h2>Todo</h2>
+  <!-- add todos here -->
+  <div class="todo" *ngFor="let todo of getTodosInTodo()" id="{{todo.id}}">{{todo.title}}</div>
+</div>
+<div class="todo-col" id="in-progress" [dragula]='"todo-bag"'>
+  <h2>In-Progress</h2>
+  <!-- add todos here -->
+  <div class="todo" *ngFor="let todo of getTodosInProgress()" id="{{todo.id}}">{{todo.title}}</div>
+</div>
+<div class="todo-col" id="done" [dragula]='"todo-bag"'>
+  <h2>Done</h2>
+  <!-- add todos here -->
+  <div class="todo" *ngFor="let todo of getTodosInDone()" id="{{todo.id}}">{{todo.title}}</div>
+</div>

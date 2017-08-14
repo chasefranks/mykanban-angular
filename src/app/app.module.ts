@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { DragulaSampleComponent } from './dragula-sample.component';
 
 import { DragulaModule } from 'ng2-dragula'
-import { DragulaService } from 'ng2-dragula'
+import { DragulaService } from 'ng2-dragula';
+import { TodoComponent } from './todo/todo.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DragulaSampleComponent
+    DragulaSampleComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
