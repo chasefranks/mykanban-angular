@@ -1,0 +1,23 @@
+.kanban-col {
+  float: left;
+  width: 18%;
+  border-radius: 8px;
+  background-color: grey;
+  min-height: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.kanban-col-header {
+  height: 70px;
+  padding: 10px;
+}
+
+.user-story {
+  color: green;
+  background-color: black;
+  opacity: 0.75;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+}

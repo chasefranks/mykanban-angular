@@ -6,6 +6,7 @@ import { DragulaSampleComponent } from './dragula-sample.component';
 
 import { DragulaModule } from 'ng2-dragula'
 import { DragulaService } from 'ng2-dragula';
+import { UserStoryService } from './userstory.service'
 import { TodoComponent } from './todo/todo.component';
 import { KanbanComponent } from './kanban/kanban.component'
 
@@ -22,7 +23,8 @@ import { KanbanComponent } from './kanban/kanban.component'
     DragulaModule
   ],
   providers: [
-    DragulaService
+    DragulaService,
+    UserStoryService
   ],
   bootstrap: [AppComponent]
 })
