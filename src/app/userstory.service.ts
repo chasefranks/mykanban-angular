@@ -1,38 +1,30 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http'
+
+import { Observable } from 'rxjs/Observable'
+import 'rxjs/add/operator/map'
 
 import { UserStory } from './user-story'
 import { Label } from './label'
 
+import { environment } from '../environments/environment';
+
 @Injectable()
 export class UserStoryService {
 
-  userStories: UserStory[]
+  // web service api endpoint
+  apiEndpoint: string = environment.kanbanApi
 
-  constructor() {
-    this.userStories = [
-      new UserStory('1', 'Create Angular Project', 'some description', 'in-dev', new Array(new Label('userstory', 'blue'))),
-      new UserStory('2', 'Install ng-bootstrap', 'some description', 'in-dev', new Array(new Label('userstory', 'blue'))),
-      new UserStory('3', 'Find Splash Picture', 'some description', 'analysis', new Array(new Label('spike', 'green'))),
-      new UserStory('4', 'Fix Build Issue', 'some description', 'ready-for-dev', new Array(new Label('bugfix', 'yellow'))),
-      new UserStory('5', 'Console Errors in Chrome', 'some description', 'deployed', new Array(new Label('bugfix', 'yellow'))),
-      new UserStory('6', 'title 1', 'Create Starter Component', 'deployed', new Array(new Label('userstory', 'blue')))
-    ]
-  }
+  constructor(private http: Http) { }
 
-  getUserStories(): UserStory[] {
-    return this.userStories
+  getUserStories(): Observable<UserStory[]> {
+    const url = `${this.apiEndpoint}/userStory`
+    return this.http.get(url)
+      .map(response => response.json())
+
   }
 
   updateUserStory(id: string, userStory: UserStory) {
-
-    // this should be a pointer to the found UserStory
-    var found = this.userStories.find(u => u.id == id)
-
-    // copy fields
-    found.title = userStory.title
-    found.description = userStory.description
-    found.state = userStory.state
-    found.labels = userStory.labels
 
   }
 

@@ -19,7 +19,6 @@ export class KanbanComponent implements OnInit {
   constructor(userStoryService: UserStoryService, dragulaService: DragulaService) {
     this.dragulaService = dragulaService
     this.userStoryService = userStoryService
-    this.userStories = userStoryService.getUserStories()
   }
 
   // called after constructor
@@ -30,6 +29,9 @@ export class KanbanComponent implements OnInit {
         this.updateUserStoryState(dropEvent[1].id, dropEvent[2].id)
         console.log(this.userStories)
       })
+
+    this.userStoryService.getUserStories()
+      .subscribe(stories => this.userStories = stories)
   }
 
   getUserStoriesInState(state: string): UserStory[] {
