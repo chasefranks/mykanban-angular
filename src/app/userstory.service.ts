@@ -18,19 +18,19 @@ export class UserStoryService {
   constructor(private http: Http) { }
 
   getUserStories(): Observable<UserStory[]> {
+    console.log('service getUserStories()')
     const url = `${this.apiEndpoint}/userStory`
     return this.http.get(url)
-      .map(response => response.json())
+      .map(response => response.json() as UserStory[])
 
   }
 
-  updateUserStory(id: string, userStory: UserStory) {
+  updateUserStory(id: string, userStory: UserStory): Observable<UserStory> {
+    const url = `${this.apiEndpoint}/userStory/${id}`
+    console.log(url)
 
-  }
-
-  svcupdateUserStoryState(id: string, newState: string) {
-    this.userStories.find(u => u.id == id)
-      .state = newState
+    return this.http.put(url, userStory)
+      .map(response => response.json() as UserStory)
   }
 
 }

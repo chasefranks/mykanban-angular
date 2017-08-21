@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  kanbanApi: 'http://localhost:3000/'
+  kanbanApi: 'http://localhost:3000'
 };

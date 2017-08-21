@@ -9,7 +9,8 @@ import { DragulaModule } from 'ng2-dragula'
 import { DragulaService } from 'ng2-dragula';
 import { UserStoryService } from './userstory.service'
 import { TodoComponent } from './todo/todo.component';
-import { KanbanComponent } from './kanban/kanban.component'
+import { KanbanComponent } from './kanban/kanban.component';
+import { KanbanStatePipe } from './kanban-state.pipe'
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { KanbanComponent } from './kanban/kanban.component'
     AppComponent,
     DragulaSampleComponent,
     TodoComponent,
-    KanbanComponent
+    KanbanComponent,
+    KanbanStatePipe
   ],
   imports: [
     BrowserModule,

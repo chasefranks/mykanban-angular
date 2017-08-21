@@ -1,37 +1,33 @@
 <h1>MyKanban</h1>
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="userStories">
   <div class="kanban-col" [dragula]='"kanban-bag"' id="analysis">
     <div class="kanban-col-header"><h2>Analysis</h2></div>
-    <div class="user-story" *ngFor="let us of getUserStoriesInState('analysis')" id="{{us.id}}">
+    <div class="user-story" *ngFor="let us of userStories | kanbanState:'analysis'" id="{{us.id}}">
       {{us.title}}
     </div>
   </div>
   <div class="kanban-col" [dragula]='"kanban-bag"' id="ready-for-dev">
     <div class="kanban-col-header"><h2>Ready For Dev</h2></div>
-    <div class="user-story" *ngFor="let us of getUserStoriesInState('ready-for-dev')" id="{{us.id}}">
+    <div class="user-story" *ngFor="let us of userStories | kanbanState:'ready-for-dev'" id="{{us.id}}">
       {{ us.title }}
     </div>
   </div>
   <div class="kanban-col" [dragula]='"kanban-bag"' id="in-dev">
     <div class="kanban-col-header"><h2>In Dev</h2></div>
-    <div class="user-story" *ngFor="let us of getUserStoriesInState('in-dev')" id="{{us.id}}">
+    <div class="user-story" *ngFor="let us of userStories | kanbanState:'in-dev'" id="{{us.id}}">
       {{ us.title }}
     </div>
   </div>
   <div class="kanban-col" [dragula]='"kanban-bag"' id="dev-complete">
     <div class="kanban-col-header"><h2>Dev Complete</h2></div>
-    <div class="user-story" *ngFor="let us of getUserStoriesInState('dev-complete')" id="{{us.id}}">
+    <div class="user-story" *ngFor="let us of userStories | kanbanState:'dev-complete'" id="{{us.id}}">
       {{ us.title }}
     </div>
   </div>
   <div class="kanban-col" [dragula]='"kanban-bag"' id="deployed">
     <div class="kanban-col-header"><h2>Deployed</h2></div>
-    <div class="user-story" *ngFor="let us of getUserStoriesInState('deployed')" id="{{us.id}}">
+    <div class="user-story" *ngFor="let us of userStories | kanbanState:'deployed'" id="{{us.id}}">
       {{ us.title }}
     </div>
   </div>
-</div>
-
-<div idstyle="visibility: hidden;">
-
 </div>
